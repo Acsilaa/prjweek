@@ -1,59 +1,74 @@
-html, body{
+html,
+body {
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
 }
-body{
+
+body {
     margin: 0;
 }
-@keyframes h1in{
-    from{
+
+@keyframes h1in {
+    from {
         transform: translateX(5em);
         opacity: 0;
-    }to{
+    }
+
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
-@keyframes h3in{
-    from{
+
+@keyframes h3in {
+    from {
         transform: translateY(5em);
         opacity: 0;
-    }to{
+    }
+
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
-h1{
+
+h1 {
     font-size: 4.25rem;
     animation-name: h1in;
     animation-duration: 1s;
 }
 
-h3{
+h3 {
     font-size: 2rem;
     animation-name: h3in;
     animation-duration: 1s;
 }
-.red{
+
+.red {
     background-color: rgb(174, 0, 0);
 }
-.blue{
+
+.blue {
     background-color: rgb(3, 21, 102);
 }
-.purple{
+
+.purple {
     background-color: rgb(122, 44, 175);
 }
-.green{
+
+.green {
     background-color: rgb(16, 87, 40);
 }
-.intro{
+
+.intro {
     float: right;
     min-width: 30vw;
     height: 80vh;
     display: flex;
     align-items: center;
 }
-.intro .rectangles div{
+
+.intro .rectangles div {
     width: 100vw;
     height: 100vw;
     opacity: .6;
@@ -62,21 +77,26 @@ h3{
     right: -50vw;
     z-index: -1;
 }
-.intro .rectangles{
+
+.intro .rectangles {
     z-index: -1;
 }
-.intro .heading{
+
+.intro .heading {
     z-index: 1;
     opacity: 1;
     margin: 6em;
 }
-article{
+
+article {
     padding: .5em;
 }
-article p{
+
+article p {
     font-size: 1.2rem;
 }
-footer{
+
+footer {
     width: 100vw;
     height: 4em;
     background-color: rgba(36, 36, 36, 0.848);
@@ -84,19 +104,72 @@ footer{
     align-items: center;
     justify-content: center;
 }
-img.assistants{
+
+img.assistants {
     width: 14em;
 }
-.assistant-c{
+
+.assistant-c {
     width: 35em;
     display: grid;
-    grid-template: 
-            'goog siri'
-            'googt sirit';
+    grid-template:
+        'goog siri'
+        'googt sirit';
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-a, a:visited, a:link{
+
+a,
+a:visited,
+a:link {
     color: rgb(82, 100, 71);
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .intro {
+        float: left;
+        height: max-content;
+    }
+
+    .intro .heading {
+        min-width: min(20em, 100%);
+        margin: 1em 30em 1em 1.4em;
+    }
+
+    .intro .rectangles div {
+        width: 100vw;
+        height: 100vw;
+        top: 20vw;
+        right: -45vw;
+    }
+
+    .assistant-c {
+        width: 100%;
+    }
+
+    .assistant-c img {
+        width: 100%;
+    }
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
+
+    html {
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        margin: 0;
+        width: 100vw;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
 }

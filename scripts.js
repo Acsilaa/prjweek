@@ -17,7 +17,7 @@ for (let i = 0, prevR = [-minSpread]; i < divs.length; i++) {
     divs[i].style.transform = "rotateZ(" + r + "deg)";
 }
 let lastScrollTop = 0;
-$(window).scroll(function (event) {
+$(document).scroll(function (event) {
     var st = $(this).scrollTop();
     for (let i = 0; i < divs.length; i++) {
         let transf = (divs[i].style.transform + "");
