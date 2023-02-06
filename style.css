@@ -5,11 +5,34 @@ html, body{
 body{
     margin: 0;
 }
+@keyframes h1in{
+    from{
+        transform: translateX(5em);
+        opacity: 0;
+    }to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes h3in{
+    from{
+        transform: translateY(5em);
+        opacity: 0;
+    }to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 h1{
     font-size: 4.25rem;
+    animation-name: h1in;
+    animation-duration: 1s;
 }
+
 h3{
     font-size: 2rem;
+    animation-name: h3in;
+    animation-duration: 1s;
 }
 .red{
     background-color: rgb(174, 0, 0);
@@ -65,6 +88,7 @@ img.assistants{
     width: 14em;
 }
 .assistant-c{
+    width: 35em;
     display: grid;
     grid-template: 
             'goog siri'
