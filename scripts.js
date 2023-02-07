@@ -1,3 +1,9 @@
+function clamp(val, minInc, maxInc) {
+    if (val <= minInc) return minInc;
+    if (val >= maxInc) return maxInc;
+    return val;
+}
+
 // intro's rectangles-------------
 let divs = $(".intro .rectangles div");
 let minSpread = 30;
@@ -40,47 +46,6 @@ let contents = [
     "ChatGPT from OpenAI",
     "Landbot",
     "Ubisoft Sam",
+    "teszt",
 ];
 let h3 = $('.heading h3');
-h3.text("");
-let timediff = 0;
-for (let i = 0; i < contents.length; i++) {
-    setTimeout(function () {
-        let text = contents[i];
-        let crrnt = "";
-        //in
-        let drawn = 0;
-        function TimeOutDrawCharacter() {
-            setTimeout(function () {
-                crrnt += text.slice('')[drawn];
-                h3.text(crrnt);
-                drawn++;
-                if (drawn == text.length) {
-                    return setTimeout(TimeOutDrawCharacterReverse(), 1000);
-                };
-
-                TimeOutDrawCharacter();
-
-
-            }, 200);
-        }
-        //out
-        function TimeOutDrawCharacterReverse() {
-            setTimeout(function () {
-                crrnt = text.slice(0, drawn);
-                h3.text(crrnt);
-
-                if (drawn == 0) {
-                    return;
-                };
-                drawn--;
-                TimeOutDrawCharacterReverse();
-            }, 200);
-        }
-
-        //invoke it
-        TimeOutDrawCharacter();
-        console.log("i");
-    }, timediff);
-    timediff = (contents[i + 1].length * 200 * 2 + 1010)*2;
-}
