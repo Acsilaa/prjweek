@@ -125,8 +125,44 @@ a:visited,
 a:link {
     color: rgb(82, 100, 71);
 }
-
-
+.heading .h3{
+    display: inline;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+}
+.blinker-c{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    max-height: 4em;
+}
+@keyframes blinker{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    51%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.blinker{
+    width: .25em;
+    height: 3em;
+    background-color: black;
+    margin: 0;
+    animation-name: blinker;
+    animation-duration: .9s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    position: relative;
+    margin: .2em;
+}
 @media only screen and (max-width: 1000px) {
     .intro {
         float: left;

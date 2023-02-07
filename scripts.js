@@ -1,3 +1,4 @@
+// intro's rectangles-------------
 let divs = $(".intro .rectangles div");
 let minSpread = 30;
 for (let i = 0, prevR = [-minSpread]; i < divs.length; i++) {
@@ -23,11 +24,63 @@ $(document).scroll(function (event) {
         let transf = (divs[i].style.transform + "");
         let deg = transf.slice(8).split('deg)')[0] * 1;
         if (st > lastScrollTop) {
-            deg += (st - lastScrollTop)/9;
+            deg += (st - lastScrollTop) / 9;
         } else {
-            deg -= (lastScrollTop - st)/9;
+            deg -= (lastScrollTop - st) / 9;
         }
         divs[i].style.transform = "rotateZ(" + deg + "deg)";
     }
     lastScrollTop = st;
 });
+//---------------
+
+//intro heading h3
+
+let contents = [
+    "ChatGPT from OpenAI",
+    "Landbot",
+    "Ubisoft Sam",
+];
+let h3 = $('.heading h3');
+h3.text("");
+let timediff = 0;
+for (let i = 0; i < contents.length; i++) {
+    setTimeout(function () {
+        let text = contents[i];
+        let crrnt = "";
+        //in
+        let drawn = 0;
+        function TimeOutDrawCharacter() {
+            setTimeout(function () {
+                crrnt += text.slice('')[drawn];
+                h3.text(crrnt);
+                drawn++;
+                if (drawn == text.length) {
+                    return setTimeout(TimeOutDrawCharacterReverse(), 1000);
+                };
+
+                TimeOutDrawCharacter();
+
+
+            }, 200);
+        }
+        //out
+        function TimeOutDrawCharacterReverse() {
+            setTimeout(function () {
+                crrnt = text.slice(0, drawn);
+                h3.text(crrnt);
+
+                if (drawn == 0) {
+                    return;
+                };
+                drawn--;
+                TimeOutDrawCharacterReverse();
+            }, 200);
+        }
+
+        //invoke it
+        TimeOutDrawCharacter();
+        console.log("i");
+    }, timediff);
+    timediff = (contents[i + 1].length * 200 * 2 + 1010)*2;
+}
