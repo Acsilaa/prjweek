@@ -3,7 +3,9 @@ function clamp(val, minInc, maxInc) {
     if (val >= maxInc) return maxInc;
     return val;
 }
-
+async function delay(t){
+    return new Promise(res => setTimeout(res, t));
+}
 // intro's rectangles-------------
 let divs = $(".intro .rectangles div");
 let minSpread = 30;
@@ -44,8 +46,30 @@ $(document).scroll(function (event) {
 
 let contents = [
     "ChatGPT from OpenAI",
-    "Landbot",
-    "Ubisoft Sam",
-    "teszt",
+    "Google Assistant",
+    "Siri from Apple",
 ];
 let h3 = $('.heading h3');
+h3.text("");
+let typingSpeed = 150; // the lower, the faster
+let deleteSpeed = 50;
+let afterTypeWait = 1000;
+let afterDeleteWait = 600;
+
+async function Draw(){
+    for(let i = 0; i < contents.length; i++){
+        let text = contents[i];
+        for(let j = 0; j <= text.length; j++){
+            h3.text(text.slice(0, j));
+            await delay(typingSpeed);
+        }
+        await delay(afterTypeWait);
+        for(let j = text.length; j >= 0; j--){
+            h3.text(text.slice(0, j));
+            await delay(deleteSpeed);
+        }
+        await delay(afterDeleteWait);
+    }
+    Draw();
+}
+Draw();
