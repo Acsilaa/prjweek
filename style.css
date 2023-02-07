@@ -2,12 +2,21 @@ html,
 body {
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
 body {
     margin: 0;
 }
-
+::selection{
+    color: black;
+    background-color: aquamarine;
+}
+::-moz-selection{
+    color: black;
+    background-color: aquamarine;
+}
 @keyframes h1in {
     from {
         transform: translateX(5em);
@@ -180,8 +189,8 @@ a:link {
         width: min(100%, 30em);
     }
     .intro .rectangles div {
-        width: 100vw;
-        height: 100vw;
+        width: 60vh;
+        height: 60vh;
         top: 20vw;
         right: -45vw;
     }
@@ -202,15 +211,12 @@ a:link {
     html {
         position: fixed;
         height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     body {
         margin: 0;
-        width: 100vw;
         height: 100%;
-        overflow-y: auto;
         overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
     }
 }
