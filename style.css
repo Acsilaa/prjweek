@@ -105,6 +105,9 @@ article {
 article p {
     font-size: 1.2rem;
 }
+article p::first-letter{
+    font-size: 108%;
+}
 footer {
     width: 100vw;
     height: 4em;
