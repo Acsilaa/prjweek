@@ -293,22 +293,20 @@ dt{
         width: 100%;
     }
 
-    body,
-    html {
-        overflow-x: hidden;
-    }
-
     html {
         position: fixed;
         height: 100%;
-        overflow-x: hidden;
-    }
-
-    body {
+        overflow: hidden;
+      }
+      
+      body {
         margin: 0;
+        width: 100vw; 
         height: 100%;
+        overflow-y: auto;
         overflow-x: hidden;
-    }
+        -webkit-overflow-scrolling: touch;
+      }
     footer .blinker {
         display: none;
     }
