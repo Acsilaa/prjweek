@@ -234,7 +234,7 @@ dt::after{
     position: relative;
 }
 #usage .ulimg:hover .uldecor{
-    transform: rotateZ(-90deg);
+    transform: translateX(1.4em);
 }
 #usage .uldecor{
     position: absolute;
