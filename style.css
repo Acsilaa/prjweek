@@ -221,6 +221,7 @@ dt::after{
 #textbubble{
     width: 15em;
     height: 15em;
+    margin-left: 4em;
 }
 .ulimg{
     width: 100%;
@@ -232,14 +233,19 @@ dt::after{
 #usage .ulimg {
     position: relative;
 }
+#usage .ulimg:hover .uldecor{
+    left: 30%;
+    transform: rotateZ(180deg);
+}
 #usage .uldecor{
     position: absolute;
+    transition: 1.2s;
     z-index: -1;
     left: 0;
     width: 1px;
     height: 1px;
     border: 7em solid transparent;
-    border-left: 7em solid rgba(12, 0, 184, 0.418);
+    border-left: 7em solid rgba(17, 7, 158, 0.637);
 }
 dd{
     margin-bottom: .75em;
