@@ -18,35 +18,52 @@ body {
     background-color: aquamarine;
 }
 @keyframes h1in {
-    from {
+    0% {
+        transform: translateX(0em);
+        opacity: 0;
+    }
+    20%{
         transform: translateX(5em);
         opacity: 0;
     }
-
-    to {
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
 @keyframes h3in {
-    from {
+    0% {
+        transform: translateY(0em);
+        opacity: 0;
+    }
+    20% {
         transform: translateY(5em);
         opacity: 0;
     }
-
-    to {
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
-
+@keyframes headingh1in{
+    from{
+        transform: translateY(-6em);
+        opacity: 0;
+    }to{
+        transform: translateY(0em);
+        opacity: 1;
+    }
+}
 h1 {
     font-size: 4.25rem;
     animation-name: h1in;
     animation-duration: 1s;
+    margin-bottom: .1em;
 }
-
+.intro h1{
+    animation-name: headingh1in;
+}
 h3 {
     font-size: 2rem;
     animation-name: h3in;
@@ -141,17 +158,21 @@ img.assistants {
 a,
 a:visited,
 a:link {
-    color: rgb(115, 158, 175);
+    color: rgb(43, 30, 19);
 }
 a:hover{
     background-color: rgb(28, 20, 68);
     border-radius: 5px;
+    color: white;
 }
 .heading .h3{
     display: inline;
     width: max-content;
     margin: 0;
     padding: 0;
+}
+article h3{
+    border-left: 7px solid rgb(177, 114, 42);
 }
 .blinker-c{
     display: flex;
