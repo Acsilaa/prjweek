@@ -278,7 +278,7 @@ dt{
     position: absolute;
     z-index: -1;
     top: 0;
-    left: -2em;
+    right: 5em;
     transform: rotateZ(-5deg);
     transition: 2s;
 }
