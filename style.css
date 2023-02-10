@@ -102,6 +102,7 @@ h3 {
     top: -50vw;
     right: -50vw;
     z-index: -1;
+    border-radius: 5px;
 }
 
 .intro .rectangles {
@@ -159,6 +160,7 @@ a,
 a:visited,
 a:link {
     color: rgb(43, 30, 19);
+    font-weight: bold;
 }
 a:hover{
     background-color: rgb(28, 20, 68);
@@ -236,6 +238,9 @@ dt::after{
 #usage .ulimg:hover .uldecor{
     transform: translateX(1.4em);
 }
+#usage .ulimg:hover .uldecor-rect{
+    transform: rotateZ(100deg);
+}
 #usage .uldecor{
     position: absolute;
     transition: .5s;
@@ -247,6 +252,7 @@ dt::after{
     border-left: 7em solid rgba(202, 110, 5, 0.801);
 }
 #usage .uldecor-rect{
+    transition: 5s;
     position: absolute;
     width: 40em;
     height: 40em;
@@ -254,6 +260,7 @@ dt::after{
     z-index: -1;
     left: -10em;
     transform: rotateZ(25deg);
+    border-radius: 10px;
 }
 dd{
     margin-bottom: .75em;
@@ -262,6 +269,26 @@ dt{
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: .2em;
+}
+#advancing .section-decor{
+    width: 70%;
+    height: 40em;
+    background-color: rgba(60, 24, 158, 0.747);
+    border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    top: -5em;
+    left: -4em;
+    transform: rotateZ(-5deg);
+    transition: 2s;
+}
+#advancing{
+    position: relative;
+}
+#advancing:hover .section-decor{
+    background-color: rgba(5, 8, 170, 0.747);
+    border-radius: 20px;
+    width: 75%;
 }
 @media only screen and (max-width: 1000px) {
     .intro {
@@ -317,5 +344,12 @@ dt{
         width: 30%;
         height: auto;
         margin: auto;
+    }
+    #advancing .section-decor{
+        height: 100%;
+        width: 80%;
+        opacity: .8;
+        left: 0;
+        top: 0;
     }
 }
