@@ -223,7 +223,9 @@ dt::after{
     align-items: center;
     justify-content: start;
 }
-
+#lock{
+    float: right;
+}
 #usage .ulimg {
     position: relative;
 }
@@ -343,6 +345,11 @@ dt{
         opacity: .8;
         left: 0;
         top: 0;
+    }
+    #lock{
+        margin: auto;
+        width: 50%;
+        float: left;
     }
 }
 footer {
