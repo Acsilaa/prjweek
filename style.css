@@ -227,8 +227,12 @@ dt::after{
     float: right;
     width: max(15em, 20%);
 }
+#usage{
+    margin-bottom: 2em;
+}
 #usage .ulimg {
     position: relative;
+    width: fit-content;
 }
 #usage .ulimg:hover .uldecor{
     transform: translateX(1.4em);
@@ -256,6 +260,11 @@ dt::after{
     left: -10em;
     transform: rotateZ(25deg);
     border-radius: 10px;
+}
+#usage dl{
+    float: right;
+    width: 50%;
+    border-bottom: 2px solid black;
 }
 dd{
     margin-bottom: .75em;
@@ -323,17 +332,17 @@ dt{
 }
 #security .decors .decor.def{
     transform: rotateZ(45deg);
-    animation: divrot-def 10s infinite alternate;
+    animation: divrot-def 20s infinite alternate;
 }
 #security .decors .decor.red{
     background-color: rgba(255, 0, 0, 0.493);
     transform: rotateZ(75deg);
-    animation: divrot-red 12s infinite alternate;
+    animation: divrot-red 22s infinite alternate;
 }
 #security .decors .decor.yellow{
     background-color: rgba(158, 144, 14, 0.493);
     transform: rotateZ(90deg);
-    animation: divrot-yellow 15s infinite alternate;
+    animation: divrot-yellow 25s infinite alternate;
 }
 @media only screen and (max-width: 1000px) {
     .intro {
@@ -384,6 +393,15 @@ dt{
     }
     .ulimg{
         display: grid;
+    }
+    #usage dl{
+        float: initial;
+        grid-row: 5;
+        border-bottom: 0;
+    }
+    #usage{
+        display: grid;
+        justify-content: left;
     }
     #textbubble{
         width: 30%;
