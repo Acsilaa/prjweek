@@ -361,7 +361,12 @@ dt{
     z-index: -1;
     background-color: rgba(71, 6, 114, 0.842);
     transform-origin: center;
+    transition: 1s;
     transform: rotateZ(45deg);
+}
+#ethics:hover .decors .tri{
+    transform:  rotateZ(45deg) scale(140%);
+    opacity: .9;
 }
 @media only screen and (max-width: 1000px) {
     .intro {
