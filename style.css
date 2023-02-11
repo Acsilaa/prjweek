@@ -5,7 +5,9 @@ body {
     width: 100%;
     min-height: 100vh;
 }
-
+*{
+    max-width: 100vw;
+}
 body {
     margin: 0;
 }
@@ -372,6 +374,24 @@ dt{
     float: right;
     width: 21em;
 }
+#market .decors{
+    position: relative;
+}
+#market .decors .decor{
+    position: absolute;
+    top: -10em;
+    right: 2em;
+    z-index: -1;
+    width: 50em;
+    height: 30em;
+    background-color: rgba(204, 74, 13, 0.932);
+    border-radius: 5px;
+    transform: rotateZ(-5deg);
+    transition: 2s;
+}
+#market:hover .decors .decor{
+    transform: translateX(-50em) rotateZ(-85deg);
+}
 @media only screen and (max-width: 1000px) {
     .intro {
         float: left;
@@ -475,6 +495,12 @@ dt{
         float: none;
         width: min(10em, 100%);
         margin: auto;
+    }
+    #market .decors .decor{
+        height: 100vh;
+    }
+    #market:hover .decors .decor{
+        transform: rotateZ(-5deg);
     }
 }
 footer {
