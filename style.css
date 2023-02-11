@@ -368,6 +368,10 @@ dt{
     transform:  rotateZ(45deg) scale(140%);
     opacity: .9;
 }
+#coin{
+    float: right;
+    width: 21em;
+}
 @media only screen and (max-width: 1000px) {
     .intro {
         float: left;
@@ -461,6 +465,16 @@ dt{
     }
     #ethics .decors .tri{
         display: none;
+    }
+    #coinholder{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #coin{
+        float: none;
+        width: min(10em, 100%);
+        margin: auto;
     }
 }
 footer {
