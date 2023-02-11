@@ -225,6 +225,7 @@ dt::after{
 }
 #lock{
     float: right;
+    width: max(15em, 20%);
 }
 #usage .ulimg {
     position: relative;
@@ -283,6 +284,56 @@ dt{
     background-color: rgba(5, 8, 170, 0.747);
     border-radius: 20px;
     width: 65%;
+}
+#security .decors{
+    margin: 0;
+    width: fit-content;
+    position: relative;
+}
+#security .decors .decor{
+    width: 40em;
+    height: 40em;
+    background-color: rgba(95, 158, 160, 0.514);
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    border-radius: 35%;
+    left: 10vw;
+}
+@keyframes divrot-def {
+    from{
+        transform: rotateZ(45deg);;
+    }to{
+        transform: rotateZ(345deg);
+    }
+}
+@keyframes divrot-red {
+    from{
+        transform: rotateZ(75deg);;
+    }to{
+        transform: rotateZ(375deg);
+    }
+}
+@keyframes divrot-yellow {
+    from{
+        transform: rotateZ(90deg);;
+    }to{
+        transform: rotateZ(390deg);
+    }
+}
+#security .decors .decor.def{
+    transform: rotateZ(45deg);
+    animation: divrot-def 10s infinite alternate;
+}
+#security .decors .decor.red{
+    background-color: rgba(255, 0, 0, 0.493);
+    transform: rotateZ(75deg);
+    animation: divrot-red 12s infinite alternate;
+}
+#security .decors .decor.yellow{
+    background-color: rgba(158, 144, 14, 0.493);
+    transform: rotateZ(90deg);
+    animation: divrot-yellow 15s infinite alternate;
 }
 @media only screen and (max-width: 1000px) {
     .intro {
@@ -347,9 +398,23 @@ dt{
         top: 0;
     }
     #lock{
+        width: min(70%, 15em);
+        float: initial;
         margin: auto;
-        width: 50%;
-        float: left;
+    }
+    #lock-c{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #security .decors .decor{
+        position: absolute;
+        top: 10em;
+        left: 0;
+        width: 30em;
+        height: 30em;
+        
     }
 }
 footer {
