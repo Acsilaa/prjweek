@@ -344,6 +344,25 @@ dt{
     transform: rotateZ(90deg);
     animation: divrot-yellow 25s infinite alternate;
 }
+#ethics dt{
+    background-color: rgba(80, 6, 165, 0.603);
+    width: max-content;
+}
+#ethics .decors{
+    position: relative;
+}
+#ethics .decors .tri{
+    width: 40vw;
+    height: 40vw;
+    border-radius: 5px;
+    position: absolute;
+    right: -25%;
+    top: 0;
+    z-index: -1;
+    background-color: rgba(71, 6, 114, 0.842);
+    transform-origin: center;
+    transform: rotateZ(45deg);
+}
 @media only screen and (max-width: 1000px) {
     .intro {
         float: left;
@@ -398,6 +417,7 @@ dt{
         float: initial;
         grid-row: 5;
         border-bottom: 0;
+        width: 100%;
     }
     #usage{
         display: grid;
@@ -433,6 +453,9 @@ dt{
         width: 30em;
         height: 30em;
         
+    }
+    #ethics .decors .tri{
+        display: none;
     }
 }
 footer {
